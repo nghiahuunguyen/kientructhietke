@@ -6,19 +6,37 @@ abstract class ATM{
 +abstract ATM thietlapmenhgiathaphon(ATM atm);
 +abstract void ruttien(int sotien);
 }
+abstract class ChuoiMenhGiaFactory{
+    #ATM_TheoMenhGia getChuoiMennhGia(int menhgia)
+    +void ruttien((int sotien, int menhgiacaohon)
+}
+class ChuoiMenhGiaVND
 class menhgiathapnhat{
 +void ruttien(int (int sotien);
 }
+ATM<|-- ChuoiMenhGiaFactory
 ATM<|--menhgiaATM
 ATM<|--menhgiathapnhat
-menhgiaATM-->ATM:menhgiathaphon
+menhgiaATM->ATM:menhgiathaphon
+ATM<--*ChuoiMenhGiaVND
 
 note right of ATM::ruttien
     tính số tờ,nếu lơn hơn 0-->in ra số tờ
     tính số tiền dư,nếu>0
     Chuyển tiền dư cho thành phần sau
 end note
-note left of menhgiathapnhat::ruttien
+note right of menhgiathapnhat::ruttien
     tính và in số tờ
+end note
+note bottom of ChuoiMenhGiaFactory
+    +Phương thức ruttien
+    - Gọi phương thức getChuoiMennhGia->getChuoiMennhGia
+    - Gọi phương thức ruttien trên đối tượng chuoiMenhGia
+end note
+note bottom of ChuoiMenhGiaVND
+    +Tạo các đối tượng ATM_ThemMenhGia theo mệnh giá tiền VN
+    + kết nôi các đối tượng này thành chỗi trong phương thức khởi tạo
+    + Phương thức getChuoiMennhGia trả v
+    đối tượng kiểu ATM_TheoMenhGia chuỗi ứng giá trị đầu vào
 end note
 @enduml

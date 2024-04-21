@@ -1,0 +1,25 @@
+@startuml
+interface TaiKhoanATM{
+    bool kiemtrasodu(int soTien)
+    void nhanThongBao(int soTienRut,bool thanhCong)
+}
+class TaiKhoan{
+    int soDu
+    +duathevaoATM();
+    +rutthekhoiATM();
+}
+class ATM{
+    +nhanThe(TaiKhoanATM atm)
+    +trathe(TaiKhoanATM atm)
+    +rutTien(int soTien)
+}
+ATM-->TaiKhoanATM:theATM
+TaiKhoanATM<|..TaiKhoan
+TaiKhoan-->ATM:atm
+note bottom of ATM
+    Subject
+end note
+note left of TaiKhoan
+    Observer
+end note
+@enduml

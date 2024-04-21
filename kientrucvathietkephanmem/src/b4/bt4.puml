@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class kehochoctap{
+    String ten
+    + abstract add(kehoachchung k);
+    +abstract remove(kehoachchung k);
+    +abstract int sotc();
+    +abstract int hocphi();
+    +abstract String thongtin
+}
+class monhoc{
+    int sotc;
+    int hocphitc;
+}
+class kehoachchung{
+    + int sotc();
+}
+kehochoctap<|--monhoc
+kehochoctap<|--* kehoachchung
+kehoachchung*--->"*"kehochoctap:list
+note bottom of kehoachchung
+Càidđặt chung kyhoc,namhoc,khoahoc
+end note
+note right of kehoachchung::sotc
+t=0
+duyet qua cac kehochoctap k trong list
+t=t+k.sotc();
+return t;
+end note
+}
+
+@enduml
