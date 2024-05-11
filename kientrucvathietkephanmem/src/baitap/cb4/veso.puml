@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract DoVeSo{
+    String tengiai
+    List<int>sotrungthuong
+    {abstract} DoVeSo giaiKeTiep(DoVeSo giaiKT)
+    {abstract} String doveSo(String veso)
+}
+DoVeSo<|---GiaiThongThuong
+DoVeSo <--- GiaiThongThuong:ketiep
+DoVeSo <|--- GiaiUt
+note bottom of GiaiThongThuong
+doveSo(String veso)
+Duyệt qua cái chuỗi s trong sotrungthuong;
+nếu veso kết thúc bằng chuỗi s
+int thông báo trúng giải
+return
+chuyển vé số cho giaiKeTiep
+end note
+note bottom of GiaiUt
+doveSo(String veso)
+Duyệt qua cái chuỗi s trong sotrungthuong;
+nếu veso kết thúc bằng chuỗi s
+int thông báo trúng giải
+return
+chucbanmayman
+end note
+@enduml

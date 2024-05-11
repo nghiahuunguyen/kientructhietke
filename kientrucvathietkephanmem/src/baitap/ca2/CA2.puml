@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface buttonclick{
+    void update()
+}
+class button{
+    int count
+    void add()
+    void click()
+}
+class activity{
+
+}
+buttonclick-->button
+
+@enduml
