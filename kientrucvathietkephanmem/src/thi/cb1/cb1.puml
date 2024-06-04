@@ -1,0 +1,15 @@
+@startuml
+abstract class ATM{
+- String MenhGia;
++ abstract ATM ATMKeTiep (ATM ketiep)
++ abstract void XuLy(int sotien)
+}
+class MenhGiaThongThuong
+class MenhGiaCuoiCung
+
+ATM<|--MenhGiaThongThuong
+ATM<|--MenhGiaCuoiCung
+
+MenhGiaThongThuong-->ATM:ketiep
+
+@enduml

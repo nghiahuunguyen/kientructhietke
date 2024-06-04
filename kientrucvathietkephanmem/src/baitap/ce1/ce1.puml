@@ -19,7 +19,5 @@ class ArrayCollection {
 Collection<|---ArrayCollection
 Iterator<|..ArrayInterator
 ArrayInterator-->ArrayCollection:collection
-note left of Iterator
-    Nguyễn Hữu Nghĩa 63134775
-end note
+
 @enduml

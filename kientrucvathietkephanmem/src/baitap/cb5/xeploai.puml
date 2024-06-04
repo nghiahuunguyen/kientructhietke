@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class xeploai{
+    String tenloai;
+    xeploaiketiep(xeploai kt)
+    string sapxeploai(int so)
+}
+xeploai<|--xeploaikhac
+xeploai<|-- xeploaiyeu
+@enduml
