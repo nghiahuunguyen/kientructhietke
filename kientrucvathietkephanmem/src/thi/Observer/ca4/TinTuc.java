@@ -1,27 +1,34 @@
 package thi.Observer.ca4;
 
 public class TinTuc {
-    int Id;
-    String Noidung;
+    int id;
+    String noidung;
 
-    public TinTuc(String noidung, int id) {
-        Noidung = noidung;
-        Id = id;
+    public TinTuc(int id, String noidung) {
+        this.id = id;
+        this.noidung = noidung;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder  builder = new StringBuilder()
+                .append(id).append(". ").append(noidung);
+        return builder.toString();
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNoidung() {
-        return Noidung;
+        return noidung;
     }
 
     public void setNoidung(String noidung) {
-        Noidung = noidung;
+        this.noidung = noidung;
     }
 }

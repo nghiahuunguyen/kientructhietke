@@ -4,29 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Topic {
-    List<TopicListen> listens;
-    List<TinTuc> tt;
-
-    public Topic(List<TinTuc>tt, List<TopicListen> listens) {
-        this.tt = tt;
-        this.listens = listens;
+    List<TinTuc>list =new ArrayList<>();
+    List<TopicListener>listeners=new ArrayList<>();
+    void dangky(TopicListener listen){
+        listeners.add(listen);
     }
-
-    public void  dangky(TopicListen listen){
-       listens.add(listen);
-    }
-    public void huydangky(TopicListen listen){
-        listens.remove(listen);
-    }
-    public void themmoi(TinTuc t){
-        // Thêm đối tượng TinTuc mới vào danh sách t
-        tt.add(t);
-        // Thông báo cho mỗi listener về TinTuc mới
-        for (TopicListen listener : listens) {
-            listener.listen(t);
+    void  themmoi(TinTuc t){
+        list.add(t);
+        for( TopicListener s:listeners){
+            s.listen(t);
         }
     }
-    public void capnhat(TinTuc t){
-
+    void capnhat(TinTuc t){
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).getId()==t.getId()){
+                list.set(i,t);
+                for( TopicListener s:listeners){
+                    s.listen(t);
+                }
+            }
+        }
     }
 }

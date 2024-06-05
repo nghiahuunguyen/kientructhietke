@@ -1,21 +1,20 @@
-package baitap.ce1;
+package thi.ce1;
 
-import java.util.Spliterator;
-import java.util.function.Consumer;
-
-public class ArrayInterator implements Iterator {
-
+public class ArrayIterator implements MyIterator{
     ArrayCollection collection;
     int index=-1;
-    protected ArrayInterator(ArrayCollection array){this.collection=array;}
+
+    public ArrayIterator(ArrayCollection collection) {
+        this.collection = collection;
+    }
 
     @Override
-    public Object frist() {
-       if(collection.count()>0){
-           index=0;
-           return collection.getItem(index);
-       }
-       return null;
+    public Object first() {
+        if(collection.count()>0){
+            index=0;
+            return collection.getItem(index);
+        }
+        return null;
     }
 
     @Override

@@ -1,5 +1,5 @@
 package thi.Observer.ca4;
 
-public interface TopicListen {
+public interface TopicListener {
     void listen(TinTuc t);
 }

@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+abstract class veso{
+    string tengiai
+    List<String>sotrungthuong
+    +abstract veso vesoketep(veso ketiep)
+    +abstract void xuly(string sodo)
+}
+class Giaithongthuong
+class Giaicuoicung
+veso<|-- Giaithongthuong
+veso<|--Giaicuoicung
+Giaithongthuong-->veso:ketiep
+@enduml

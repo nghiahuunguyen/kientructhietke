@@ -1,26 +1,23 @@
 package baitap.cb3;
 
 public class BacThapNhat extends TienDienBacThang {
-    private TienDienBacThang k;
+    TienDienBacThang tieptheo;
 
-    public BacThapNhat(String tenbac, int max, int min, int gia, TienDienBacThang k) {
-        super(tenbac, max, min, gia);
-        this.k = k;
+    public BacThapNhat(String tenBac, int min, int max, float gia) {
+        super(tenBac, min, max, gia);
     }
 
     @Override
-    public TienDienBacThang ketiep(TienDienBacThang k) {
-        this.k = k;
-        return this;
+    TienDienBacThang TienDienBacThangketiep(TienDienBacThang ketiep) {
+        tieptheo=ketiep;
+        return tieptheo;
     }
 
     @Override
-    public int tinhTienDien(int soKW) {
-        if (soKW <= max) {
-            return (soKW - min) * gia;
-        } else {
-            int tienDienBacKeTiep = k.tinhTienDien(soKW);
-            return (max - min) * gia + tienDienBacKeTiep;
-        }
+    float xuly(float sokw) {
+        if(sokw<=max)
+            return (sokw-min)*gia;
+        else
+            return (max-min)*gia+ tieptheo.xuly(sokw);
     }
 }

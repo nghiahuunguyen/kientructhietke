@@ -2,23 +2,18 @@ package baitap.cb3;
 
 public class Main {
     public static void main(String[] args) {
-        TienDienBacThang bacCaoNhat = new BacCaoNhat("Bậc cao nhất", Integer.MAX_VALUE, 4010, 3151);
-        TienDienBacThang bac5 = new BacThapNhat("Bậc 5", 4000, 3010, 3050, bacCaoNhat);
-        TienDienBacThang bac4 = new BacThapNhat("Bậc 4", 3000, 2010, 2729, bac5);
-        TienDienBacThang bac3 = new BacThapNhat("Bậc 3", 2000, 1010, 2167, bac4);
-        TienDienBacThang bac2 = new BacThapNhat("Bậc 2", 1000, 510, 1866, bac3);
-        TienDienBacThang bac1 = new BacThapNhat("Bậc 1", 500, 0, 1806, bac2);
-        int soKW1 = 1000;
-        int soKW2 = 2500;
-        int soKW3 = 5000;
-
-        int tienDien1 = bac1.tinhTienDien(soKW1);
-        int tienDien2 = bac1.tinhTienDien(soKW2);
-        int tienDien3 = bac1.tinhTienDien(soKW3);
-
-        // Hiển thị kết quả
-        System.out.println("Tiền điện (" + soKW1 + " kWh): " + tienDien1);
-        System.out.println("Tiền điện (" + soKW2 + " kWh): " + tienDien2);
-        System.out.println("Tiền điện (" + soKW3 + " kWh): " + tienDien3);
+        TienDienBacThang bac1=new BacThapNhat("bac 1",0,50,1.728f);
+        TienDienBacThang bac2=new BacThapNhat("bac 2",51,100,1.786f);
+        TienDienBacThang bac3=new BacThapNhat("bac 3",101,200,2.074f);
+        TienDienBacThang bac4=new BacThapNhat("bac 4",201,300,2.612f);
+        TienDienBacThang bac5=new BacThapNhat("bac 5",301,400,2.919f);
+        TienDienBacThang bac6 = new BacCaoNhat("bac 6", 401, Integer.MAX_VALUE, 3.015f);
+        bac1.TienDienBacThangketiep(bac2)
+                .TienDienBacThangketiep(bac3)
+                .TienDienBacThangketiep(bac4)
+                .TienDienBacThangketiep(bac5)
+                .TienDienBacThangketiep(bac6);
+        float t=bac1.xuly(50.0f);
+        System.out.println(t);
     }
 }

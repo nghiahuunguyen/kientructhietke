@@ -10,6 +10,6 @@ public class main {
        PTP.vayketiep(TP)
                .vayketiep(GD)
                .vayketiep(CT);
-       PTP.xuly(450);
+       PTP.xuly(600);
     }
 }
